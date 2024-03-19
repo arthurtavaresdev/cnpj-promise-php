@@ -18,7 +18,7 @@ class MinhaReceita extends BaseClient
         return 'https://minhareceita.org';
     }
 
-    protected function getCompany($data) : Company
+    protected function getCompany($data): Company
     {
         return new Company(
             cnpj: $data->cnpj,

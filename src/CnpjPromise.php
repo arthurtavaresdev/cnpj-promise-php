@@ -1,6 +1,7 @@
 <?php
 
 namespace ArthurTavaresDev\CnpjPromise;
+
 use ArthurTavaresDev\CnpjPromise\Clients\CnpjWS;
 use ArthurTavaresDev\CnpjPromise\Clients\MinhaReceita;
 use ArthurTavaresDev\CnpjPromise\Contracts\BaseClient;
@@ -30,6 +31,7 @@ class CnpjPromise
             static function ($client) use ($cnpj) {
                 /** @var BaseClient $client */
                 $client = new $client();
+
                 return $client->fetch($cnpj);
             },
             $this->clients
