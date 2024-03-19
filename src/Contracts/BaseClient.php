@@ -3,15 +3,17 @@
 namespace ArthurTavaresDev\CnpjPromise\Contracts;
 
 use ArthurTavaresDev\CnpjPromise\Data\Company;
-use Closure;
 use GuzzleHttp\Promise\PromiseInterface;
 use Illuminate\Http\Client\PendingRequest;
 
 abstract class BaseClient
 {
     abstract protected function baseUrl(): string;
-    abstract protected function getCompany(object $data) : Company;
+
+    abstract protected function getCompany(object $data): Company;
+
     abstract public function identifier(): string;
+
     protected function client(): PendingRequest
     {
         return (new PendingRequest)->baseUrl($this->baseUrl());
