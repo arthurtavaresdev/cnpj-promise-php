@@ -1,0 +1,42 @@
+{
+    "name": "arthurtavares/cnpj-promise-php",
+    "description": "Busca por CNPJ utilizando Promises nos serviços de Minha Receita, CNPJ Ws e outros.",
+    "keywords": ["cnpj", "promise", "php", "minha receita", "cnpj ws", "brasil"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Arthur Tavares",
+            "email": "contato@arthurtavares.dev",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "ext-json": "*"
+    },
+    "require-dev": {
+        "pestphp/pest": "^2.28",
+        "phpstan/phpstan": "^1.10.50"
+    },
+    "scripts": {
+        "test": "vendor/bin/pest",
+        "analyse": "phpstan analyse --memory-limit=1G --no-progress",
+        "baseline": "./vendor/bin/phpstan analyse --memory-limit=2G --generate-baseline"
+    },
+    "autoload": {
+        "psr-4": {
+            "ArthurTavaresDev\\CnpjPromisePhp\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "ArthurTavaresDev\\CnpjPromisePhp\\Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    }
+}
